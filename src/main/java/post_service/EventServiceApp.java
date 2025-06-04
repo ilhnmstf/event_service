@@ -7,9 +7,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableFeignClients
 @SpringBootApplication
-public class PostServiceApp {
+public class EventServiceApp {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(PostServiceApp.class)
+        new SpringApplicationBuilder(EventServiceApp.class)
                 .bannerMode(Banner.Mode.OFF)
                 .run(args);
     }

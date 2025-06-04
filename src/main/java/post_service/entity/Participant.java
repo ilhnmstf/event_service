@@ -16,40 +16,30 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "comment")
+@Table(name = "participant")
 @AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true)
 @Setter
 @Getter
-public class Comment {
+public class Participant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "content", nullable = false, length = 4096)
-    private String content;
-
-    @Column(name = "author_id", nullable = false)
-    private Long authorId;
+    private long id;
 
     @ManyToOne
-    @JoinColumn(name = "post_id", nullable = false)
-    private Post post;
+    @JoinColumn(name = "event_idd", nullable = false)
+    private Event event;
+
+    @Column(name="user_id", nullable = false)
+    private Long userId;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
 }
