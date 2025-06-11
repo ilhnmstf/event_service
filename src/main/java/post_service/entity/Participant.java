@@ -23,6 +23,7 @@ import java.time.LocalDateTime;
 @Table(name = "participant")
 @AllArgsConstructor
 @NoArgsConstructor
+@Accessors(chain = true)
 @Setter
 @Getter
 public class Participant {
@@ -32,7 +33,7 @@ public class Participant {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "event_idd", nullable = false)
+    @JoinColumn(name = "event_id", nullable = false)
     private Event event;
 
     @Column(name="user_id", nullable = false)
