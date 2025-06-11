@@ -1,12 +1,19 @@
 package post_service.service.post;
 
-import post_service.dto.event.CreateEventDto;
-import post_service.dto.event.EventDto;
-import post_service.entity.Event;
+import post_service.dto.CreateEventDto;
+import post_service.dto.EventDto;
 
 public interface EventService {
 
-    EventDto create(CreateEventDto createPost);
+    EventDto createEvent(CreateEventDto createPost);
 
-    Event findById(long postId);
+    EventDto getEventById(long eventId);
+
+    EventDto updateEvent(long eventId, CreateEventDto updatedEvent);
+
+    void deleteEventById(long eventId);
+
+    void subscribe(long eventId, long userId);
+
+    void unSubscribe(long eventId, long userId);
 }

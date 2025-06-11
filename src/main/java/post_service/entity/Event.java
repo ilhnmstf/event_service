@@ -33,17 +33,17 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "owner_id", nullable = false)
+    @Column(name = "owner_id")
     private long ownerId;
 
     @Column(name = "description", nullable = false, length = 4096)
     private String description;
 
-    @Column(name = "active", nullable = false)
-    private boolean active;
+    @Column(name = "active")
+    private boolean active = true;
 
-    @Column(name = "deleted", nullable = false)
-    private boolean deleted;
+    @Column(name = "deleted")
+    private boolean deleted = false;
 
     @Column(name = "address", nullable = false, length = 256)
     private String address;
@@ -51,7 +51,7 @@ public class Event {
     @Column(name = "city", nullable = false, length = 128)
     private String city;
 
-    @Column(name = "country_id", nullable = false)
+    @Column(name = "country_id")
     private long countryId;
 
     @Temporal(TemporalType.TIMESTAMP)
